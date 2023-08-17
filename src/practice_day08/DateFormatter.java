@@ -9,8 +9,8 @@ public class DateFormatter {
     public static void main(String[] args) {
         LocalDateTime currentTime=LocalDateTime.now();
         DateTimeFormatter formatter=DateTimeFormatter.ofPattern("dd/MM/yyyy HH.mm.ss");
-        String  newFormatDateTime=currentTime.format(formatter);
-        System.out.println("Yeni zaman bicimi :"+newFormatDateTime);
+        String newfFormatDateTime= currentTime.format(formatter);
+        System.out.println("Yeni Zaman Biçimi: "+ newfFormatDateTime);
 
     }
 }

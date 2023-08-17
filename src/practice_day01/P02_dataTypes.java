@@ -11,7 +11,7 @@ public class P02_dataTypes {
 
         float: Ondalıklı sayıları ifade eder( Sonunda f yazmak zorunludur)
         double: Ondalıklı sayıları ifade eder ( Sonunda d yazmak zorunlu değil)
-        byte<short<int<lon<float<double
+        byte< short < int < long <float <double
         boolean: true ya da false
         char: tek tırnak içinde yazılırte karakter alır- ascii tırnak içine yazılmaz
          */

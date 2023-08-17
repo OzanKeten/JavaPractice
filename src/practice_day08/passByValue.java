@@ -4,15 +4,15 @@ package practice_day08;
 
 public class passByValue {
     public static void main(String[] args) {
-        StringBuilder text=new StringBuilder("Merhaba");
-        System.out.println("Ilk metin : "+text);
+    StringBuilder text=new StringBuilder("Merhaba"); //Başlngıç metnini belirledik
+        System.out.println("İlk Metin: "+text);
         modify(text);
-        System.out.println("Son metin : "+text);
-    }
+        System.out.println("Son Metin: "+text);
 
-    public static void modify(StringBuilder str) {
+}
+
+     static void modify(StringBuilder str) {
         str.append(" Java");
-        System.out.println("Metod icinde : "+str);
+        System.out.println("Metod İçinde: "+str);
     }
-
 }

@@ -1,8 +1,12 @@
 package practice_day07;
+
 import java.util.ArrayList;
-public class forEachLoop01 { /*
+
+public class forEachLoop01 {
+    /*
     // Bir ArrayList oluşturun ve içine 3 adet meyve ekleyin.
     // Daha sonra bu meyveleri büyük harflerle ekrana yazdırın. (forEachLoop kullanın)
+
     // Örnek çıktı:
     // Meyveler: ELMA ARMUT ÇİLEK
      */
@@ -11,6 +15,7 @@ public class forEachLoop01 { /*
         meyveler.add("Elma");
         meyveler.add("armut");
         meyveler.add("ÇİLEk");
+
         for(String meyve:meyveler){
             System.out.println(meyve.toUpperCase());
         }

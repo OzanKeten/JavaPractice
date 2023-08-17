@@ -1,4 +1,5 @@
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
 public class T120_WiseMarket {
@@ -38,6 +39,7 @@ public class T120_WiseMarket {
         System.out.println("-----------------       Menü         -----------------");
         System.out.println("   Lütfen Alışveriş Yapmak İstediğiniz Reyonu Seçiniz  ");
         System.out.println("1 - Şarküteri \n2 - Manav\n3 - Market\n4 - Fiş Yazdır\n5 - Çıkış");
+
         int secim = scan.nextInt();
         if ((secim < 1 || secim > 5)) { //if(!(secim>=1 && secim<=5))
             System.out.println(" Uyarı: Geçersiz bir tuşa bastınız. Tekrar Giriniz ");
@@ -62,6 +64,7 @@ public class T120_WiseMarket {
                 default:
             }
         }
+
     }
 
     public static void sarkuteri() {
@@ -88,6 +91,7 @@ public class T120_WiseMarket {
                     case 64:
                         urunAdi = "Kıyma";
                         urunFiyati = 350;
+
                         break;
                 }
                 System.out.println(urunMiktari + " kg " + urunAdi + ":" + (urunFiyati * urunMiktari) + " ₺");
@@ -101,97 +105,102 @@ public class T120_WiseMarket {
             }
         }
     }
-
     public static void manav() {
         System.out.println("Manav Reyonuna Hoşgeldiniz");
         System.out.println("Lütfen alacağınız ürün kodunu giriniz:\n71-Muz - 60₺\n72-Patates - 25₺\n73-Elma - 49₺\n74-Soğan - 20₺\n75-Domates - 39₺\n76-Ananas - 59₺ ");
-        while (!ekUrun) {
-            urunKodu = scan.nextInt();
-            if (urunKodu >= 71 && urunKodu <= 76) {
+        while(!ekUrun){
+            urunKodu= scan.nextInt();
+            if (urunKodu>=71&&urunKodu<=76){
                 System.out.println("Kaç kg alacaksınız?");
-                urunMiktari = scan.nextInt();
-                switch (urunKodu) {
+                urunMiktari= scan.nextInt();
+                switch (urunKodu){
                     case 71:
-                        urunAdi = "Muz";
-                        urunFiyati = 60;
-                        System.out.println(urunMiktari + " kg " + urunAdi + " fiyatı: " + urunFiyati * urunMiktari + " TL'dir");
+                        urunAdi="Muz";
+                        urunFiyati=60;
+                        System.out.println(urunMiktari+" kg "+urunAdi+" fiyatı: "+urunFiyati*urunMiktari+" TL'dir");
                         break;
                     case 72:
-                        urunAdi = "Patates";
-                        urunFiyati = 25;
-                        System.out.println((urunMiktari + " kg " + urunAdi + " fiyatı: " + urunFiyati * urunMiktari + " TL'dir"));
+                        urunAdi="Patates";
+                        urunFiyati=25;
+                        System.out.println((urunMiktari+" kg "+urunAdi+" fiyatı: "+urunFiyati*urunMiktari+" TL'dir"));
                         break;
                     case 73:
-                        urunAdi = "Elma";
-                        urunFiyati = 49;
-                        System.out.println((urunMiktari + " kg " + urunAdi + " fiyatı: " + urunFiyati * urunMiktari + " TL'dir"));
+                        urunAdi="Elma";
+                        urunFiyati=49;
+                        System.out.println((urunMiktari+" kg "+urunAdi+" fiyatı: "+urunFiyati*urunMiktari+" TL'dir"));
                         break;
                     case 74:
-                        urunAdi = "Soğan";
-                        urunFiyati = 20;
-                        System.out.println((urunMiktari + " kg " + urunAdi + " fiyatı: " + urunFiyati * urunMiktari + " TL'dir"));
+                        urunAdi="Soğan";
+                        urunFiyati=20;
+                        System.out.println((urunMiktari+" kg "+urunAdi+" fiyatı: "+urunFiyati*urunMiktari+" TL'dir"));
                         break;
                     case 75:
-                        urunAdi = "Domates";
-                        urunFiyati = 39;
-                        System.out.println((urunMiktari + " kg " + urunAdi + " fiyatı: " + urunFiyati * urunMiktari + " TL'dir"));
+                        urunAdi="Domates";
+                        urunFiyati=39;
+                        System.out.println((urunMiktari+" kg "+urunAdi+" fiyatı: "+urunFiyati*urunMiktari+" TL'dir"));
                         break;
                     case 76:
-                        urunAdi = "Ananas";
-                        urunFiyati = 59;
-                        System.out.println((urunMiktari + " kg " + urunAdi + " fiyatı: " + urunFiyati * urunMiktari + " TL'dir"));
+                        urunAdi="Ananas";
+                        urunFiyati=59;
+                        System.out.println((urunMiktari+" kg "+urunAdi+" fiyatı: "+urunFiyati*urunMiktari+" TL'dir"));
                         break;
                 }
-                urunFiyati = urunFiyati * urunMiktari;
-                toplam += urunFiyati;
-                System.out.println("Oluşan Sepet Tutarı: " + toplam);
-                sepet += urunAdi + " : " + urunFiyati + " Tl \n";
+                urunFiyati=urunFiyati*urunMiktari;
+                toplam+=urunFiyati;
+                System.out.println("Oluşan Sepet Tutarı: "+toplam);
+                sepet+=urunAdi+" : "+urunFiyati+" Tl \n";
                 System.out.println("Başka ürün almak isterseniz kodunu giriniz. Ana menüye dönmek için 0 tuşuna basınız.");
-            } else if (urunKodu == 0) {
+            } else if (urunKodu==0) {
+
                 girisEkrani();
+
             }
+
+
         }
+
     }
 
     public static void market() {
         System.out.println("Market Reyonuna Hoşgeldiniz");
         System.out.println("Lütfen satın almak istediğiniz Ürün Kodunu giriniz:\n81-Nutella - 103₺\n82-Ekmek - 8₺\n83-Yumurta - 76₺\n84-Yoğurt - 29₺ ");
-        while (!ekUrun) {
-            urunKodu = scan.nextInt();
-            if (urunKodu >= 81 && urunKodu <= 84) {
+        while(!ekUrun){
+            urunKodu= scan.nextInt();
+            if (urunKodu>=81&&urunKodu<=84){
                 System.out.println("Kaç kg/adet alacaksınız?");
-                urunMiktari = scan.nextInt();
-                switch (urunKodu) {
+                urunMiktari= scan.nextInt();
+                switch (urunKodu){
                     case 81:
-                        urunAdi = "Nutella";
-                        urunFiyati = 103;
-                        System.out.println(urunMiktari + " kg " + urunAdi + " fiyatı: " + urunFiyati * urunMiktari + " TL'dir");
+                        urunAdi="Nutella";
+                        urunFiyati=103;
+                        System.out.println(urunMiktari+" kg "+urunAdi+" fiyatı: "+urunFiyati*urunMiktari+" TL'dir");
                         break;
                     case 82:
-                        urunAdi = "Ekmek";
-                        urunFiyati = 8;
-                        System.out.println(urunMiktari + " kg " + urunAdi + " fiyatı: " + urunFiyati * urunMiktari + " TL'dir");
+                        urunAdi="Ekmek";
+                        urunFiyati=8;
+                        System.out.println(urunMiktari+" kg "+urunAdi+" fiyatı: "+urunFiyati*urunMiktari+" TL'dir");
                         break;
                     case 83:
-                        urunAdi = "Yumurta";
-                        urunFiyati = 76;
-                        System.out.println(urunMiktari + " kg " + urunAdi + " fiyatı: " + urunFiyati * urunMiktari + " TL'dir");
+                        urunAdi="Yumurta";
+                        urunFiyati=76;
+                        System.out.println(urunMiktari+" kg "+urunAdi+" fiyatı: "+urunFiyati*urunMiktari+" TL'dir");
                         break;
                     case 84:
-                        urunAdi = "Yoğurt";
-                        urunFiyati = 29;
-                        System.out.println(urunMiktari + " kg " + urunAdi + " fiyatı: " + urunFiyati * urunMiktari + " TL'dir");
+                        urunAdi="Yoğurt";
+                        urunFiyati=29;
+                        System.out.println(urunMiktari+" kg "+urunAdi+" fiyatı: "+urunFiyati*urunMiktari+" TL'dir");
                         break;
                 }
-                urunFiyati = urunMiktari * urunFiyati;
-                toplam += urunFiyati;
-                System.out.println("Oluşan Sepet Tutarı: " + toplam);
-                sepet += urunAdi + " : " + urunFiyati + " TL ";
+                urunFiyati=urunMiktari*urunFiyati;
+                toplam+=urunFiyati;
+                System.out.println("Oluşan Sepet Tutarı: "+toplam);
+                sepet+=urunAdi+" : "+urunFiyati+" TL ";
                 System.out.println("Başka ürün almak isterseniz kodunu giriniz. Ana menüye dönmek için 0 tuşuna basınız.");
-            } else if (urunKodu == 0) {
+            } else if (urunKodu==0) {
                 girisEkrani();
             }
         }
+
     }
 
     public static void fisYazdir() {
@@ -203,24 +212,30 @@ public class T120_WiseMarket {
         System.out.println("=====    Bizi Tercih Ettiğiniz İçin Teşekkür Ederiz     ======");
         System.out.println("----------      Alışveriş Bilgileriniz         -------------");
         System.out.println(" \n \n");
-        System.out.println("Alışveriş Listeniz\n" + sepet);
+        System.out.println("Alışveriş Listeniz\n"+sepet);
         System.out.println(" ");
-        System.out.println("Toplam Tutar: " + toplam);
+        System.out.println("Toplam Tutar: "+toplam);
         System.out.println(" \n \n");
         System.out.println("------------      İyi Günler Dileriz         --------------");
-        LocalDateTime saat = LocalDateTime.now();
-        System.out.println(saat);
+        LocalDateTime currentTime=LocalDateTime.now();
+        DateTimeFormatter formatter=DateTimeFormatter.ofPattern("dd/MM/yyyy HH.mm.ss");
+        String newfFormatDateTime= currentTime.format(formatter);
+        System.out.println("Yeni Zaman Biçimi: "+ newfFormatDateTime);
         System.out.println("ana menüye dönmek için 0 tuşuna basınız. Çıkış yapmak için 5 tuşuna basınız");
-        if (urunKodu == 0) {
+        if (urunKodu==0){
             girisEkrani();
-        } else if (urunKodu == 5) {
+        } else if (urunKodu==5) {
             cikis();
         }
         //cikis();
     }
 
     public static void cikis() {
-        // scan.close();
+       // scan.close();
         System.exit(0); // Çalışan Java kodunu durdurur.
+
     }
+
+
 }
+

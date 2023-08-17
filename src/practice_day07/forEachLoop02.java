@@ -1,9 +1,13 @@
 package practice_day07;
+
 import java.util.ArrayList;
 import java.util.Scanner;
-public class forEachLoop02 {  /*
+
+public class forEachLoop02 {
+    /*
 // Bir ArrayList oluşturun ve içine çeşitli ürün fiyatları ekleyin.
 // Bu fiyatların toplamını hesaplayarak ekrana yazdırın.
+
 // Örnek çıktı:
 // Toplam fiyat: 236.5
 */
@@ -26,9 +30,12 @@ public class forEachLoop02 {  /*
         double urun5= scan.nextDouble();
         fiyatlar.add(urun5);
         double toplam=0;
+
         for (double fiyat:fiyatlar) {
             toplam+=fiyat;
         }
+
         System.out.println("Bugünkü satışların toplam cirosu: "+toplam);
+
     }
 }
